@@ -1,6 +1,20 @@
-# Getting Started with Create React App
+# PDF Viewer with Annotation
+
+
+## Explaination: 
+You can view any of the three pdfs or add new pdf from your device and highlight some text in them. 
+
+These highlights will also show on a seperate pannel on the web page. You can navigate to those sections of pdf by clicking the buttons available. 
+
+Highlights Pannel will have 2 portions, one for Labels and one for all the boxes
+
+## Working
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project uses react-pdf-viewer to view pdf in web page.
+
+Run using  `npm start` on the console. View on [http://localhost:3000](http://localhost:3000), by opening it on your browser.
 
 ## Available Scripts
 

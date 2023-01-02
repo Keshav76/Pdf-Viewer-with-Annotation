@@ -154,50 +154,63 @@ const DisplayNotesSidebarExample = ({ fileUrl }) => {
         }}
       >
         {notes.length === 0 && (
-          <div style={{ textAlign: "center", marginTop: 20 }}>There is no note</div>
+          <div style={{ textAlign: "center", marginTop: 20 }}>
+            There is no note
+          </div>
         )}
-        <div
-          style={{
-            height: "50%",
-            paddingTop: 20,
-          }}
-        >
-          {notes.map((note) => (
-            <div style={{ margin: 10 }}>
-              <h4>{note.content}</h4>
+        {notes.length !== 0 && (
+          <>
+            <div
+              style={{
+                height: "50%",
+                paddingTop: 20,
+              }}
+            >
+              <h2 style={{ margin: "1pc" }}>Boxes</h2>
+              <hr style={{ margin: "1pc 3pc 1pc 1pc" }} />
+              {notes.map((note) => (
+                <div style={{ margin: 10 }}>
+                  <h4>{note.content}</h4>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        {notes.map((note) => {
-          return (
-            <div>
-              <div
-                key={note.id}
-                style={{
-                  borderBottom: "1px solid rgba(0, 0, 0, .3)",
-                  padding: "8px",
-                }}
-              >
-                {note.highlightAreas.map((ele, key) => (
-                  <div style={{ marginLeft: 10 }}>
-                    x: {Math.round(ele.left)}, y: {Math.round(ele.top)}, width:{" "}
-                    {Math.round(ele.width)}, height: {Math.round(ele.height)}
-                    <span>
-                      <button
-                        className="btn btn-primary"
-                        onClick={() =>
-                          jumpToHighlightArea(note.highlightAreas[key])
-                        }
-                      >
-                        {note.content}
-                      </button>
-                    </span>
+            <h2 style={{ margin: "1pc" }}>Labels</h2>
+              <hr style={{ margin: "1pc 3pc 1pc 1pc" }} />
+            {notes.map((note) => {
+              return (
+                <div>
+                  <div
+                    key={note.id}
+                    style={{
+                      borderBottom: "1px solid rgba(0, 0, 0, .3)",
+                      padding: "8px",
+                    }}
+                  >
+                    
+                    {note.highlightAreas.map((ele, key) => (
+                      <div style={{ marginLeft: 10 }}>
+                        x: {Math.round(ele.left)}, y: {Math.round(ele.top)},
+                        width: {Math.round(ele.width)}, height:{" "}
+                        {Math.round(ele.height)}
+                        <span>
+                          <button
+                            style={{marginLeft: 3}}
+                            className="btn btn-primary"
+                            onClick={() =>
+                              jumpToHighlightArea(note.highlightAreas[key])
+                            }
+                          >
+                            {note.content}
+                          </button>
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-          );
-        })}
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
       <div
         style={{

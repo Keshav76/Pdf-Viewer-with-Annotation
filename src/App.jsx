@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 import "./App.css";
-import pdfFile1 from "./1st.pdf";
-import pdfFile2 from "./2nd.pdf";
-import pdfFile3 from "./3rd.pdf";
+import pdfFile1 from "./pdf/1st.pdf";
+import pdfFile2 from "./pdf/2nd.pdf";
+import pdfFile3 from "./pdf/3rd.pdf";
 
 import DisplayNotesSidebarExample from "./PDFShow.jsx";
+import Upload from "./Upload.jsx";
 
 export const App = () => {
   // for submit event
@@ -43,6 +44,7 @@ export const App = () => {
               </button>
             </li>
           </ul>
+          <Upload state={viewPdf} setState={setViewPdf} />
         </div>
       )}
     </React.Fragment>
